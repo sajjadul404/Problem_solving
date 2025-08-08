@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
     string s;
-    getline(cin, s); 
+    getline(cin, s);
 
     set<char> letters; 
 
