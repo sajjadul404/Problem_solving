@@ -6,7 +6,7 @@ int main() {
     cin >> s;
 
     string target = "hello";
-    int j = 0;
+    int j = 0; 
 
     for (int i = 0; i < s.size(); i++) {
         if (s[i] == target[j]) {
