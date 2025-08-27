@@ -15,7 +15,7 @@ int main() {
         }
     }
 
-    for (int i = 1; i < s.size(); i++) {
+    for (int i = 1; i < s.length(); i++) {
         if (!isupper(s[i])) {
             allUpperExceptFirst = false;
             break;
@@ -23,7 +23,7 @@ int main() {
     }
 
     if (allUpper || allUpperExceptFirst) {
-        for (int i = 0; i < s.size(); i++) {
+        for (int i = 0; i < s.length(); i++) {
             if (isupper(s[i])) 
                 s[i] = tolower(s[i]);
             else 
