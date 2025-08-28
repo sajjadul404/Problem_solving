@@ -8,19 +8,20 @@ int main() {
         int n;
         cin >> n;
         int arr[n];
-        for (int i = 0; i < n; i++){
-            cin >> arr[i];
+        for (int i = 0; i < n; i++) cin >> arr[i];
+
+        sort(arr, arr + n);
+
+        bool ok = true;
+        for (int i = 1; i < n; i++) {
+            if (arr[i] - arr[i - 1] > 1) {
+                ok = false;
+                break;
+            }
         }
 
-        int mn = *min_element(arr, arr + n);
-        int mx = *max_element(arr, arr + n);
-
-        if (mx - mn > 1){
-            cout << "NO\n";
-        }
-        else{
-            cout << "YES\n";
-        }
+        if (ok) cout << "YES\n";
+        else cout << "NO\n";
     }
     return 0;
 }
