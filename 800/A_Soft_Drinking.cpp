@@ -10,15 +10,15 @@ int main() {
     int total_lime = c * d;
 
 
-    int drink_toasts = total_drink / nl;   
-    int lime_toasts = total_lime;          
-    int salt_toasts = p / np;     
+    int drink_toast = total_drink / nl;   
+    int lime_toast = total_lime;          
+    int salt_toast = p / np;     
 
 
-    int total_toasts = min({drink_toasts, lime_toasts, salt_toasts});
+    int total_toast = min({drink_toast, lime_toast, salt_toast});
 
 
-    cout << total_toasts / n << endl;
+    cout << total_toast / n << endl;
 
     return 0;
 }
