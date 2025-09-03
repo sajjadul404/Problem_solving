@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-    const int  MAX = 100000;
+    const int  MAX = 1000000;
     vector<bool> is_prime(MAX + 1, true);
 
     is_prime[0] = is_prime[1] = false;
