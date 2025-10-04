@@ -44,7 +44,7 @@ void solve()
 int main()
 {
     fastio();
-    //int T = 1;
+
 
     int t;
     cin>>t;
