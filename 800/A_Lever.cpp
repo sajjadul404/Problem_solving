@@ -7,15 +7,18 @@ int main() {
     while (t--) {
         int n;
         cin >> n;
-        vector<int> a(n), b(n);
-        for (int i = 0; i < n; ++i) cin >> a[i];
-        for (int i = 0; i < n; ++i) cin >> b[i];
-
-        int max_diff = 0;
-        for (int i = 0; i < n; ++i)
-            max_diff = max(max_diff, a[i] - b[i]);
-
-        cout << max_diff << endl;
+        int a[15], b[15];
+        for (int i = 0; i < n; i++) scanf("%d", &a[i]);
+        for (int i = 0; i < n; i++) scanf("%d", &b[i]);
+        
+        int dec = 0, inc = 0;
+        for (int i = 0; i < n; i++) {
+            if (a[i] > b[i]) dec += (a[i] - b[i]);
+            else inc += (b[i] - a[i]);
+        }
+        
+        int result = std::max(dec, inc) + 1;
+        cout << result << "\n";
     }
     return 0;
 }
