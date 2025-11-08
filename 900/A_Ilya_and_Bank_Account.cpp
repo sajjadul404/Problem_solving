@@ -14,6 +14,5 @@ int main() {
         long long remove_second_last = (n / 100) * 10 + (n % 10);
         cout << max(remove_last, remove_second_last);
     }
-
     return 0;
 }
