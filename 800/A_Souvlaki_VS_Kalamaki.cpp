@@ -8,20 +8,22 @@ int main() {
         int n;
         cin >> n;
         vector<int> a(n);
-        for (int i = 0; i < n; ++i)
+        for (int i = 0; i < n; i++) {
             cin >> a[i];
-
-        unordered_set<int> seen;
-        bool has_duplicate = false;
-        for (int x : a) {
-            if (seen.count(x)) {
-                has_duplicate = true;
-                break;
-            }
-            seen.insert(x);
         }
-
-        cout << (has_duplicate ? "YES" : "NO") << '\n';
+        
+        if (n % 2 == 0) {
+            cout << "YES\n";
+        } else {
+            bool duplicate = false;
+            for (int i = 1; i < n; i++) {
+                if (a[i] <= a[i-1]) {
+                    duplicate = true;
+                    break;
+                }
+            }
+            cout << (duplicate ? "YES\n" : "NO\n");
+        }
     }
     return 0;
 }
