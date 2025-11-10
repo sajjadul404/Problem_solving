@@ -14,32 +14,19 @@ int main() {
         for (int i = 0; i < n; i++) {
             cin >> a[i];
         }
-        bool hasDuplicate = false;
-        vector<int> b = a;
-        sort(b.begin(), b.end());
-        
+    
+        bool is_sorted = true;
         for (int i = 1; i < n; i++) {
-            if (b[i] == b[i-1]) {
-                hasDuplicate = true;
+            if (a[i] < a[i-1]) {
+                is_sorted = false;
                 break;
             }
         }
         
-        if (hasDuplicate) {
+        if (is_sorted) {
             cout << "YES\n";
         } else {
-            bool sorted = true;
-            for (int i = 1; i < n; i++) {
-                if (a[i] < a[i-1]) {
-                    sorted = false;
-                    break;
-                }
-            }
-            if (sorted) {
-                cout << "YES\n";
-            } else {
-                cout << "NO\n";
-            }
+            cout << "NO\n";
         }
     }
     
