@@ -9,44 +9,45 @@ void solve() {
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
-
+    
+    int min_abs_sum;
     if (a[0] != -1 && a[n-1] != -1) {
-
-        int sum = abs(a[n-1] - a[0]);
-        cout << sum << "\n";
-        for (int i = 0; i < n; i++) {
-            if (a[i] == -1) a[i] = 0;
-            cout << a[i] << " ";
-        }
-        cout << "\n";
-        return;
+        min_abs_sum = abs(a[n-1] - a[0]);
+    } else {
+        min_abs_sum = 0; 
     }
+    
+    cout << min_abs_sum << "\n";
 
     if (a[0] == -1 && a[n-1] == -1) {
-        cout << "0\n";
-        for (int i = 0; i < n; i++) {
-            cout << "0 ";
-        }
-        cout << "\n";
-    }
-    else if (a[0] == -1) {
-        cout << "0\n";
+        a[0] = 0;
+        a[n-1] = 0;
+    } else if (a[0] == -1) {
         a[0] = a[n-1];
-        for (int i = 0; i < n; i++) {
-            if (a[i] == -1) a[i] = 0;
-            cout << a[i] << " ";
-        }
-        cout << "\n";
-    }
-    else {
-        cout << "0\n";
+    } else if (a[n-1] == -1) {
         a[n-1] = a[0];
-        for (int i = 0; i < n; i++) {
-            if (a[i] == -1) a[i] = 0;
-            cout << a[i] << " ";
-        }
-        cout << "\n";
     }
+
+    for (int i = 0; i < n; i++) {
+        if (a[i] == -1) {
+            a[i] = 0;
+        }
+    }
+    
+    int current_diff = a[n-1] - a[0];
+    int target_diff = a[n-1] - a[0];  
+
+    if (current_diff != target_diff) {
+
+        a[n-1] = a[0] + target_diff;
+        if (a[n-1] < 0) a[n-1] = 0;
+    }
+    
+  
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << "\n";
 }
 
 int main() {
@@ -55,6 +56,5 @@ int main() {
     while (t--) {
         solve();
     }
-    
     return 0;
 }
