@@ -23,11 +23,8 @@ int main()
         for(int i=0;i<m;i++)
         {
            cin>>tm;
-           for(int j=0;j<tm;j++)
-           {
-               v.push_back(v[tp]);
-               tp++;
-           }
+           tp+=tm;
+           if(tp>=n)tp%=n;
         }
         cout<<v[tp]<<endl;
     }
