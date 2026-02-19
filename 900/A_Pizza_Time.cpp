@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 using ll = long long;
 using ld = long double;
 using ull = unsigned long long;
@@ -18,7 +17,6 @@ void fastio()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 }
-
 void solve()
 {
     ll n;
@@ -26,7 +24,6 @@ void solve()
 
     cout<<(n-1)/2<<endl;
 }
-
 int main()
 {
     fastio();
